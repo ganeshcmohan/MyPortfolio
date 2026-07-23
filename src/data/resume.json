@@ -88,23 +88,43 @@
   "projects": [
     {
       "name": "QWQER Analytics Platform",
-      "description": "Event-driven analytics on GCP: Pub/Sub topics streaming to BigQuery datasets.",
+      "description": "Event-driven analytics on GCP: Terraform-provisioned Pub/Sub topics streaming to BigQuery datasets, Cloud Run alert service, and Power BI–ready reporting marts.",
       "tech": ["Terraform", "BigQuery", "Pub/Sub", "Cloud Run", "FastAPI", "Cloud SQL"]
     },
     {
-      "name": "Dasgateway",
-      "description": "Payment service provider for card processing with PCI-DSS compliance workflows and secure transaction APIs.",
-      "tech": ["Django", "PostgreSQL", "REST APIs"]
+      "name": "TerraOne IoT Platform",
+      "description": "IoT ecosystem for pool and irrigation device control; led server deployment, REST APIs, and Flask microservices with GitLab CI/CD.",
+      "tech": ["Flask", "Docker", "GitLab CI/CD", "MongoDB", "Redis", "Celery"]
     },
     {
       "name": "Connected Advisor Platform (CAP)",
-      "description": "Financial advisor platform with ML-based document processing for insurance product analysis.",
+      "description": "Financial advisor platform for service delivery and third-party insurance product analysis with ML-based document processing.",
       "tech": ["Django REST Framework", "Flask", "Keras", "PostgreSQL", "MongoDB", "Redis"]
     },
     {
-      "name": "TerraOne IoT Platform",
-      "description": "IoT ecosystem for pool and irrigation device control with REST APIs and microservices.",
-      "tech": ["Flask", "Docker", "GitLab CI/CD", "MongoDB", "Redis", "Celery"]
+      "name": "Dasgateway",
+      "description": "Payment service provider for card processing integrated with PayVision, Bank One, and Omnipay; PCI-DSS compliance workflows and secure transaction APIs.",
+      "tech": ["Django", "PostgreSQL", "REST APIs"]
+    },
+    {
+      "name": "Nuflights",
+      "description": "NDC-based travel content distribution platform; built and extended GraphQL APIs to onboard airlines and connect third-party travel inventory.",
+      "tech": ["Django", "GraphQL", "PostgreSQL"]
+    },
+    {
+      "name": "Financepeer",
+      "description": "Education fee financing fintech; led backend bank integration for fee management, EMI options, and payment workflows.",
+      "tech": ["Django", "REST APIs", "PostgreSQL"]
+    },
+    {
+      "name": "Allyyc Booking Platform",
+      "description": "Booking platform for stays, activities, and events with Django backend, admin roles, and graph-based relationship modeling.",
+      "tech": ["Django", "MongoDB", "Neo4j", "Celery"]
+    },
+    {
+      "name": "Delinkure — NPA Management",
+      "description": "Core banking software for NPA risk management, monitoring, and proactive follow-ups for financial institutions.",
+      "tech": ["Django", "PostgreSQL", "REST APIs"]
     }
   ],
   "education": {
