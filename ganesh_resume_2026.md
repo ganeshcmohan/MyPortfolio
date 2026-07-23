@@ -1,7 +1,8 @@
 # GANESH C
 
 **Team Lead — Product Engineering · Solution Architect**  
-Kollam, Kerala | +91 9995838303 | ganeshcmohan@gmail.com
+Kollam, Kerala | +91 9995838303 | ganeshcmohan@gmail.com  
+Portfolio: [ganeshcmohan.github.io/MyPortfolio](https://ganeshcmohan.github.io/MyPortfolio/) · [LinkedIn](https://www.linkedin.com/in/ganesh86/) · [GitHub](https://github.com/ganeshcmohan)
 
 ## Summary
 

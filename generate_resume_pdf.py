@@ -74,7 +74,7 @@ class ResumePDF(FPDF):
         self.line(self.l_margin, y, self.w - self.r_margin, y)
         self.ln(gap_after)
 
-    def header_block(self, name: str, title: str, contact: str):
+    def header_block(self, name: str, title: str, contact: str, links: str = ""):
         self.set_font(self.font, "B", NAME_SIZE)
         self.set_text_color(*COLOR_NAME)
         self.cell(0, 10, clean(name), new_x="LMARGIN", new_y="NEXT")
@@ -88,6 +88,9 @@ class ResumePDF(FPDF):
         self.set_font(self.font, "", CONTACT_SIZE)
         self.set_text_color(*COLOR_CONTACT)
         self.cell(0, 5.5, clean(contact), new_x="LMARGIN", new_y="NEXT")
+        if links:
+            self.set_font(self.font, "", 8.5)
+            self.multi_cell(0, 4.5, clean(links))
         self._rule(gap_after=4)
 
     def section_heading(self, title: str):
@@ -157,6 +160,7 @@ def parse_markdown(content: str) -> dict:
         "name": "",
         "title": "",
         "contact": "",
+        "links": "",
         "summary": "",
         "skills": [],
         "jobs": [],
@@ -199,6 +203,10 @@ def parse_markdown(content: str) -> dict:
 
         if stripped.startswith("# ") and not data["name"]:
             data["name"] = stripped[2:].strip()
+            continue
+
+        if section is None and data.get("contact") and stripped and not stripped.startswith("#") and not stripped.startswith("**") and not data.get("links"):
+            data["links"] = clean(re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", stripped))
             continue
 
         if section is None and stripped.startswith("**") and "|" in stripped:
@@ -278,7 +286,7 @@ def build_pdf(data: dict) -> FPDF:
     pdf = ResumePDF()
     pdf.add_page()
 
-    pdf.header_block(data["name"], data["title"], data["contact"])
+    pdf.header_block(data["name"], data["title"], data["contact"], data.get("links", ""))
 
     pdf.section_heading("Professional Summary")
     pdf.body(data["summary"])
