@@ -1,0 +1,115 @@
+{
+  "name": "Ganesh C",
+  "title": "Team Lead — Product Engineering · Solution Architect",
+  "location": "Kollam, Kerala",
+  "phone": "+91 9995838303",
+  "email": "ganeshcmohan@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/ganesh86/",
+  "github": "https://github.com/ganeshcmohan",
+  "siteUrl": "https://ganeshcmohan.github.io/MyPortfolio",
+  "customDomain": "",
+  "summary": "Engineering Team Lead and Solution Architect with 13+ years of experience building scalable Python backend systems, cloud-native platforms, and data pipelines. Currently leading a product engineering team at QWY Soft on QWQER, a hyperlocal delivery and logistics platform (DMS), with AWS ECS deployments and a GCP BigQuery analytics platform. Proven track record architecting event-driven systems and delivering solutions in fintech (PCI-DSS), IoT, and logistics domains.",
+  "skills": [
+    { "category": "Languages", "items": ["Python", "JavaScript", "SQL", "PHP"] },
+    { "category": "Backend", "items": ["Django", "DRF", "Flask", "FastAPI", "GraphQL", "Celery", "Channels", "Daphne"] },
+    { "category": "Frontend", "items": ["Angular (team oversight)"] },
+    { "category": "Databases", "items": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Neo4j"] },
+    { "category": "Data & Analytics", "items": ["PySpark", "AWS Athena", "Glue", "BigQuery", "Pub/Sub"] },
+    { "category": "Cloud — AWS", "items": ["ECS", "ECR", "RDS", "S3", "Lambda", "EventBridge", "DynamoDB"] },
+    { "category": "Cloud — GCP", "items": ["BigQuery", "Pub/Sub", "Cloud Run", "Cloud SQL", "Terraform"] },
+    { "category": "DevOps", "items": ["Docker", "GitHub Actions", "GitLab CI/CD", "Jenkins", "SonarQube"] },
+    { "category": "Architecture", "items": ["Microservices", "REST APIs", "Event-driven", "Serverless", "CI/CD"] },
+    { "category": "Integrations", "items": ["ONDC", "Payment gateways", "Shopify", "Firebase FCM", "ERP sync"] },
+    { "category": "ML", "items": ["Keras", "RetinaNet"] }
+  ],
+  "experience": [
+    {
+      "role": "Team Lead / Product Engineer",
+      "company": "QWY Soft",
+      "location": "Trivandrum",
+      "period": "April 2025 – Present",
+      "highlights": [
+        "Lead the engineering team on QWQER DMS — order lifecycle, rider dispatch, merchant/admin portals, and real-time tracking (Django, DRF, Celery, PostgreSQL, Redis, RabbitMQ).",
+        "Architected order archive pipeline: PostgreSQL to S3 Parquet with AWS Glue/Athena; containerized PySpark ETL with idempotent daily incrementals and safety-gated purge.",
+        "Designed GCP analytics platform: Terraform Pub/Sub → BigQuery, Cloud Run alert service (FastAPI), Power BI–ready marts.",
+        "Manage Docker and AWS ECS deployments for API, Celery workers, and Daphne WebSocket services; GitHub Actions CI/CD.",
+        "Led geo/dispatch optimization and serverless rider notification scheduler (Lambda, EventBridge, DynamoDB, FCM)."
+      ]
+    },
+    {
+      "role": "Python Team Lead",
+      "company": "Nuventure Connect",
+      "location": "Kochi",
+      "period": "March 2023 – March 2025",
+      "highlights": [
+        "Led an 8+ member team on TerraOne IoT platform backend; GitLab CI/CD for Flask microservices (Docker, MongoDB, Redis, Celery).",
+        "Delivered microservices web application with Angular frontend and Python backend."
+      ]
+    },
+    {
+      "role": "Python Team Lead",
+      "company": "Ndimensionz Solutions",
+      "location": "Kochi",
+      "period": "January 2017 – March 2023",
+      "highlights": [
+        "Led backend for Connected Advisor Platform (CAP) with Keras/RetinaNet object detection on insurance documents.",
+        "Tech Lead on Dasgateway PSP integrated with PayVision, Bank One, Omnipay (Django, PostgreSQL).",
+        "Key role in PCI-DSS auditing for the payment platform."
+      ]
+    },
+    {
+      "role": "Senior Software Engineer / Associate Team Lead",
+      "company": "Sesame Software Solutions",
+      "location": "Kochi",
+      "period": "January 2016 – December 2017",
+      "highlights": [
+        "Associate Team Lead for Delinkure — core banking NPA risk management software."
+      ]
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "Muble Software Solutions",
+      "location": "Kochi",
+      "period": "October 2013 – January 2016",
+      "highlights": [
+        "Developed core Django applications and contributed to an ERP system."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "company": "Xminds Infotech",
+      "location": "Kochi",
+      "period": "September 2011 – October 2013",
+      "highlights": [
+        "Developed PHP-based web applications for client projects."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "QWQER Analytics Platform",
+      "description": "Event-driven analytics on GCP: Pub/Sub topics streaming to BigQuery datasets.",
+      "tech": ["Terraform", "BigQuery", "Pub/Sub", "Cloud Run", "FastAPI", "Cloud SQL"]
+    },
+    {
+      "name": "Dasgateway",
+      "description": "Payment service provider for card processing with PCI-DSS compliance workflows and secure transaction APIs.",
+      "tech": ["Django", "PostgreSQL", "REST APIs"]
+    },
+    {
+      "name": "Connected Advisor Platform (CAP)",
+      "description": "Financial advisor platform with ML-based document processing for insurance product analysis.",
+      "tech": ["Django REST Framework", "Flask", "Keras", "PostgreSQL", "MongoDB", "Redis"]
+    },
+    {
+      "name": "TerraOne IoT Platform",
+      "description": "IoT ecosystem for pool and irrigation device control with REST APIs and microservices.",
+      "tech": ["Flask", "Docker", "GitLab CI/CD", "MongoDB", "Redis", "Celery"]
+    }
+  ],
+  "education": {
+    "degree": "B.Tech — Computer Science",
+    "school": "Younus College of Engineering and Technology, Kollam",
+    "period": "2005 – 2009"
+  }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ganesh C — Team Lead & Solution Architect. Python backend, AWS, GCP, 13+ years experience." />
+  <title>Ganesh C — Team Lead & Solution Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #14375e;
+      --sky: #0ea5e9;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    .dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--sky); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .dark nav { background: rgba(15,23,42,.92); }
+    nav .inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    nav .logo { font-weight: 700; font-size: 1.125rem; color: var(--navy); }
+    .dark nav .logo { color: var(--sky); }
+    nav ul { display: none; gap: 1.5rem; list-style: none; font-size: .875rem; font-weight: 500; }
+    nav ul a { color: var(--text); text-decoration: none; }
+    nav ul a:hover { color: var(--sky); }
+    @media (min-width: 768px) { nav ul { display: flex; } }
+    .btn { display: inline-block; padding: .625rem 1.25rem; border-radius: .5rem; font-size: .875rem; font-weight: 600; text-decoration: none !important; }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .dark .btn-primary { background: var(--sky); color: #0f172a; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); margin-left: .75rem; }
+    #hero { padding: 5rem 0; background: linear-gradient(135deg, #f8fafc, #e0f2fe); border-bottom: 1px solid var(--border); }
+    .dark #hero { background: linear-gradient(135deg, #0f172a, #1e293b); }
+    #hero .eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sky); margin-bottom: .75rem; }
+    #hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--navy); line-height: 1.1; }
+    .dark #hero h1 { color: #fff; }
+    #hero .subtitle { margin-top: 1rem; font-size: 1.125rem; color: var(--muted); }
+    #hero .actions { margin-top: 2rem; }
+    section { padding: 4rem 0; }
+    section.alt { background: rgba(148,163,184,.08); }
+    h2 { font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 1.5rem; }
+    .dark h2 { color: var(--sky); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1.5rem; margin-bottom: 1.25rem; border-left: 4px solid var(--navy); }
+    .dark .card { border-left-color: var(--sky); }
+    .card h3 { font-size: 1.0625rem; font-weight: 700; }
+    .card .meta { color: var(--sky); font-weight: 500; font-size: .9375rem; }
+    .card .period { float: right; font-size: .8125rem; color: var(--muted); }
+    .card ul { margin-top: .75rem; padding-left: 0; list-style: none; }
+    .card li { font-size: .875rem; color: var(--muted); margin-bottom: .375rem; padding-left: 1rem; position: relative; }
+    .card li::before { content: ""; position: absolute; left: 0; top: .55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--sky); }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .tag { display: inline-block; background: rgba(148,163,184,.15); padding: .25rem .75rem; border-radius: 999px; font-size: .75rem; margin: .2rem .25rem 0 0; }
+    .skill-card h3 { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--navy); margin-bottom: .75rem; }
+    .dark .skill-card h3 { color: var(--sky); }
+    footer { text-align: center; padding: 2rem; font-size: .8125rem; color: var(--muted); border-top: 1px solid var(--border); }
+    #theme-toggle { background: none; border: 1px solid var(--border); border-radius: .5rem; padding: .375rem .625rem; cursor: pointer; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container inner">
+      <span class="logo">Ganesh C</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="ganesh_resume_2026.pdf" class="btn btn-primary" download style="margin-left:.5rem">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container">
+      <p class="eyebrow">Team Lead · Solution Architect</p>
+      <h1>Ganesh C</h1>
+      <p class="subtitle">Team Lead — Product Engineering · Solution Architect<br>Kollam, Kerala · 13+ years · Python Backend & Cloud Platforms</p>
+      <div class="actions">
+        <a href="ganesh_resume_2026.pdf" class="btn btn-primary" download>Download Resume</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="https://www.linkedin.com/in/ganesh86/" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ganeshcmohan" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p style="max-width:720px;font-size:1.0625rem;color:var(--muted)">Engineering Team Lead and Solution Architect with 13+ years of experience building scalable Python backend systems, cloud-native platforms, and data pipelines. Currently leading a product engineering team at QWY Soft on <strong>QWQER</strong>, a hyperlocal delivery and logistics platform (DMS), with AWS ECS deployments and a GCP BigQuery analytics platform.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="container">
+      <h2>Experience</h2>
+      <article class="card">
+        <span class="period">April 2025 – Present</span>
+        <h3>Team Lead / Product Engineer</h3>
+        <p class="meta">QWY Soft · Trivandrum</p>
+        <ul>
+          <li>Lead engineering team on QWQER DMS — Django, DRF, Celery, PostgreSQL, Redis, RabbitMQ.</li>
+          <li>Order archive pipeline: PostgreSQL → S3 Parquet, AWS Glue/Athena, PySpark ETL.</li>
+          <li>GCP analytics: Terraform Pub/Sub → BigQuery, Cloud Run alerts (FastAPI).</li>
+          <li>Docker & AWS ECS deployments; GitHub Actions CI/CD.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="period">Mar 2023 – Mar 2025</span>
+        <h3>Python Team Lead</h3>
+        <p class="meta">Nuventure Connect · Kochi</p>
+        <ul>
+          <li>Led 8+ member team on TerraOne IoT platform; GitLab CI/CD, Flask microservices.</li>
+          <li>Microservices web app with Angular frontend.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="period">Jan 2017 – Mar 2023</span>
+        <h3>Python Team Lead</h3>
+        <p class="meta">Ndimensionz Solutions · Kochi</p>
+        <ul>
+          <li>CAP platform with Keras/RetinaNet ML on insurance documents.</li>
+          <li>Tech Lead on Dasgateway PSP; PCI-DSS auditing.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="period">2011 – 2017</span>
+        <h3>Earlier Roles</h3>
+        <p class="meta">Sesame · Muble · Xminds · Kochi</p>
+        <ul>
+          <li>Delinkure NPA banking, Django ERP, PHP web applications.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Selected Projects</h2>
+      <div class="grid grid-2">
+        <article class="card" style="border-left-width:1px">
+          <h3>QWQER Analytics Platform</h3>
+          <p style="font-size:.875rem;color:var(--muted);margin-top:.5rem">Pub/Sub → BigQuery on GCP; Terraform, Cloud Run, FastAPI.</p>
+          <div><span class="tag">BigQuery</span><span class="tag">Terraform</span><span class="tag">Pub/Sub</span></div>
+        </article>
+        <article class="card" style="border-left-width:1px">
+          <h3>Dasgateway</h3>
+          <p style="font-size:.875rem;color:var(--muted);margin-top:.5rem">Payment PSP with PCI-DSS compliance workflows.</p>
+          <div><span class="tag">Django</span><span class="tag">PostgreSQL</span></div>
+        </article>
+        <article class="card" style="border-left-width:1px">
+          <h3>Connected Advisor Platform</h3>
+          <p style="font-size:.875rem;color:var(--muted);margin-top:.5rem">ML document processing for insurance analysis.</p>
+          <div><span class="tag">Keras</span><span class="tag">Flask</span><span class="tag">DRF</span></div>
+        </article>
+        <article class="card" style="border-left-width:1px">
+          <h3>TerraOne IoT</h3>
+          <p style="font-size:.875rem;color:var(--muted);margin-top:.5rem">Pool & irrigation device control via REST APIs.</p>
+          <div><span class="tag">Flask</span><span class="tag">Docker</span><span class="tag">Celery</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="alt">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="grid grid-3">
+        <div class="card skill-card"><h3>Backend</h3><span class="tag">Python</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">GraphQL</span><span class="tag">Celery</span></div>
+        <div class="card skill-card"><h3>Cloud</h3><span class="tag">AWS ECS</span><span class="tag">S3</span><span class="tag">Lambda</span><span class="tag">BigQuery</span><span class="tag">Terraform</span></div>
+        <div class="card skill-card"><h3>Data</h3><span class="tag">PySpark</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Neo4j</span><span class="tag">MongoDB</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p style="color:var(--muted);margin-bottom:1rem">Open to Team Lead, Solution Architect, and senior backend roles.</p>
+      <div class="card" style="border-left-width:1px;display:inline-block">
+        <p><a href="mailto:ganeshcmohan@gmail.com">ganeshcmohan@gmail.com</a></p>
+        <p style="margin-top:.5rem"><a href="tel:+919995838303">+91 9995838303</a></p>
+        <p style="margin-top:.5rem;color:var(--muted)">Kollam, Kerala</p>
+        <p style="margin-top:.75rem"><a href="https://www.linkedin.com/in/ganesh86/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/ganeshcmohan" target="_blank" rel="noopener">GitHub</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2026 Ganesh C</p></footer>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById('theme-toggle');
+    if (localStorage.theme === 'dark' || (!localStorage.theme && matchMedia('(prefers-color-scheme:dark)').matches)) {
+      root.classList.add('dark');
+      btn.textContent = '☀️';
+    }
+    btn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const d = root.classList.contains('dark');
+      localStorage.theme = d ? 'dark' : 'light';
+      btn.textContent = d ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

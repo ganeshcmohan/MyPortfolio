@@ -1,0 +1,6 @@
+# Custom domain for GitHub Pages
+# 1. Copy this file to CNAME (no extension):  cp CNAME.example CNAME
+# 2. Replace the line below with your domain, e.g. portfolio.ganesh.dev
+# 3. At your DNS provider, add a CNAME record pointing to username.github.io
+#
+# portfolio.example.com

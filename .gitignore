@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Env
+.env
+.env.*

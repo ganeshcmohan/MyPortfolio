@@ -1,0 +1,18 @@
+{
+  "name": "ganesh-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=16.12.1"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^3.6.5",
+    "@astrojs/tailwind": "^5.1.4",
+    "tailwindcss": "^3.4.17"
+  }
+}

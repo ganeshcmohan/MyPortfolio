@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+import resume from "../data/resume.json";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ganesh C — Team Lead & Solution Architect",
+  description = "Engineering Team Lead and Solution Architect specializing in Python backend, microservices, AWS, and GCP.",
+} = Astro.props;
+
+const pdfUrl = `${import.meta.env.BASE_URL}ganesh_resume_2026.pdf`;
+const { linkedin, github } = resume;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen font-sans">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90"
+    >
+      <nav
+        class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6"
+      >
+        <a href="#" class="text-lg font-bold text-navy dark:text-sky-300"
+          >Ganesh C</a
+        >
+        <div class="hidden items-center gap-6 text-sm font-medium md:flex">
+          <a href="#about" class="hover:text-navy dark:hover:text-sky-300"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="hover:text-navy dark:hover:text-sky-300">Experience</a
+          >
+          <a href="#projects" class="hover:text-navy dark:hover:text-sky-300"
+            >Projects</a
+          >
+          <a href="#skills" class="hover:text-navy dark:hover:text-sky-300"
+            >Skills</a
+          >
+          <a href="#contact" class="hover:text-navy dark:hover:text-sky-300"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="hidden sm:flex">
+            <slot name="social" />
+          </div>
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            class="rounded-lg border border-slate-200 p-2 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+          </button>
+          <a href={pdfUrl} class="btn-primary hidden sm:inline-flex" download>
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer
+      class="border-t border-slate-200 py-8 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400"
+    >
+      <div class="mb-4 flex justify-center">
+        <slot name="footer-social" />
+      </div>
+      <p>&copy; {new Date().getFullYear()} Ganesh C. All rights reserved.</p>
+    </footer>
+
+    <script is:inline>
+      const root = document.documentElement;
+      const stored = localStorage.getItem("theme");
+      if (
+        stored === "dark" ||
+        (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        root.classList.add("dark");
+      }
+      document.getElementById("theme-toggle")?.addEventListener("click", () => {
+        root.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          root.classList.contains("dark") ? "dark" : "light",
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import resume from "../data/resume.json";
+
+const {
+  name,
+  title,
+  location,
+  phone,
+  email,
+  linkedin,
+  github,
+  summary,
+  skills,
+  experience,
+  projects,
+} = resume;
+
+const pdfUrl = `${import.meta.env.BASE_URL}ganesh_resume_2026.pdf`;
+---
+
+<Layout>
+  <SocialLinks slot="social" linkedin={linkedin} github={github} />
+  <SocialLinks slot="footer-social" linkedin={linkedin} github={github} />
+  <!-- Hero -->
+  <section class="border-b border-slate-200 bg-gradient-to-br from-slate-50 to-sky-50 dark:border-slate-800 dark:from-slate-900 dark:to-slate-850">
+    <div class="mx-auto max-w-5xl px-4 py-20 sm:px-6 md:py-28">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+        Team Lead · Solution Architect
+      </p>
+      <h1 class="text-4xl font-bold tracking-tight text-navy dark:text-white md:text-5xl lg:text-6xl">
+        {name}
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
+        {title}
+      </p>
+      <p class="mt-2 text-slate-500 dark:text-slate-400">
+        {location} · 13+ years building Python backend & cloud platforms
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href={pdfUrl} class="btn-primary" download>
+          Download Resume
+        </a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <SocialLinks linkedin={linkedin} github={github} />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <h2 class="section-title mb-6">About</h2>
+      <p class="max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        {summary}
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="bg-slate-100/70 py-16 dark:bg-slate-850/50 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <h2 class="section-title mb-10">Experience</h2>
+      <div class="space-y-8">
+        {
+          experience.map((job) => (
+            <article class="card relative border-l-4 border-l-navy pl-2 dark:border-l-sky-500">
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                    {job.role}
+                  </h3>
+                  <p class="font-medium text-navy dark:text-sky-400">
+                    {job.company} · {job.location}
+                  </p>
+                </div>
+                <time class="mt-1 shrink-0 text-sm text-slate-500 dark:text-slate-400">
+                  {job.period}
+                </time>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                {job.highlights.map((item) => (
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <h2 class="section-title mb-10">Selected Projects</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {
+          projects.map((project) => (
+            <article class="card flex flex-col">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                {project.name}
+              </h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                {project.description}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-slate-100/70 py-16 dark:bg-slate-850/50 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <h2 class="section-title mb-10">Skills</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          skills.map((group) => (
+            <div class="card">
+              <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy dark:text-sky-400">
+                {group.category}
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span class="tag">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <h2 class="section-title mb-6">Contact</h2>
+      <p class="mb-8 max-w-xl text-slate-600 dark:text-slate-300">
+        Open to Team Lead, Solution Architect, and senior backend engineering opportunities.
+      </p>
+      <div class="card flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+        <a
+          href={`mailto:${email}`}
+          class="font-medium text-navy hover:underline dark:text-sky-400"
+        >
+          {email}
+        </a>
+        <a
+          href={`tel:${phone.replace(/\s/g, "")}`}
+          class="font-medium text-navy hover:underline dark:text-sky-400"
+        >
+          {phone}
+        </a>
+        <span class="text-slate-500 dark:text-slate-400">{location}</span>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-navy hover:underline dark:text-sky-400"
+        >
+          LinkedIn
+        </a>
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-navy hover:underline dark:text-sky-400"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
