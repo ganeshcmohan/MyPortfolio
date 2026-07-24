@@ -19,7 +19,7 @@ Engineering Team Lead and Solution Architect with 13+ years of experience buildi
 **Cloud — GCP:** BigQuery, Pub/Sub, Cloud Run, Cloud SQL, Terraform  
 **DevOps:** Docker, Docker Compose, GitHub Actions, GitLab CI/CD, Jenkins, SonarQube  
 **Architecture:** Microservices, REST APIs, event-driven systems, serverless, CI/CD pipelines  
-**Integrations:** ONDC, payment gateways, Shopify, Firebase FCM, ERP sync  
+**Integrations:** NDC airlines, payment service providers, Firebase FCM  
 **ML:** Keras, RetinaNet (object detection)
 
 ## Experience
@@ -28,10 +28,10 @@ Engineering Team Lead and Solution Architect with 13+ years of experience buildi
 *April 2025 – Present*
 
 - Lead the engineering team on backend development for **QWQER DMS** (Delivery Management System), a hyperlocal logistics platform handling order lifecycle, rider dispatch, merchant and admin portals, and real-time tracking using **Django, DRF, Celery, PostgreSQL, Redis, and RabbitMQ**.
-- Architected and delivered an **order archive pipeline** moving **PostgreSQL** data to **S3 Parquet** with **AWS Glue/Athena** catalog; containerized **PySpark** ETL with idempotent daily incrementals, verification, and safety-gated purge workflows.
+
 - Designed and implemented a **GCP analytics platform**: **Terraform**-provisioned **Pub/Sub → BigQuery** event pipeline, real-time **Cloud Run** alert service (FastAPI), and Power BI–ready reporting marts.
 - Manage **Docker and AWS ECS** deployments for API, multi-priority Celery workers, and Daphne WebSocket services in **ap-south-1**; maintain **GitHub Actions** CI/CD pipelines for stage, pre-prod, and production environments.
-- Led solution design for **geo/dispatch optimization** (grid distance caching, Shapely/GDAL benchmarks) and a **serverless rider notification scheduler** (Lambda, EventBridge, DynamoDB, Firebase FCM).
+- Led solution design for a **serverless rider notification scheduler** (Lambda, EventBridge, DynamoDB, Firebase FCM).
 
 ---
 
